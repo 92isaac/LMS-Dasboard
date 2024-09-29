@@ -3,6 +3,7 @@ const express = require('express');
 require("dotenv").config()
 const userRoutes = require('./routes/user_routes')
 const scheduleRoutes = require('./routes/schedule_routes')
+const admissionRoutes = require('./routes/admission_route')
 const cors = require("cors");
 const morgan = require("morgan");
 const cookieParser = require('cookie-parser');
@@ -30,6 +31,7 @@ connect()
 
 app.use('/api/user', userRoutes)
 app.use('/api/schedule', scheduleRoutes)
+app.use('/api/admission', admissionRoutes)
 
 app.use(notFound)
 app.use(errorhandler)
